@@ -16,6 +16,12 @@ const pwaOptions = (
     // keeps serving the precache between updates.
     registerType: 'autoUpdate',
     base: '/',
+    workbox: {
+      // Without this, the SW's NavigationRoute would serve index.html for
+      // these non-HTML routes (anything typed in the address bar is a
+      // navigation request). Let them hit the network and reach Firebase.
+      navigateFallbackDenylist: [/^\/sitemap\.xml$/, /^\/robots\.txt$/],
+    },
     includeAssets: [
       'img/apple-touch-icon.png',
       'img/favicon-16x16.png',
