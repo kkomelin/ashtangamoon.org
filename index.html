@@ -2,8 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>%VITE_APP_NAME%</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>%VITE_APP_NAME% - %VITE_APP_SLOGAN%</title>
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="color-scheme" content="dark" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href="%VITE_APP_URL%/" />
+    <meta name="application-name" content="%VITE_APP_NAME%" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="%VITE_APP_NAME%" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -28,11 +39,24 @@
     <meta name="msapplication-config" content="/img/browserconfig.xml" />
     <meta name="description" content="%VITE_APP_SLOGAN%" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="%VITE_APP_URL%" />
+    <meta property="og:site_name" content="%VITE_APP_NAME%" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="%VITE_APP_URL%/" />
     <meta property="og:title" content="%VITE_APP_NAME%" />
     <meta property="og:description" content="%VITE_APP_SLOGAN%" />
     <meta
       property="og:image"
+      content="%VITE_APP_URL%/img/screenshot-wide.png"
+    />
+    <meta property="og:image:width" content="3200" />
+    <meta property="og:image:height" content="1600" />
+    <meta property="og:image:alt" content="%VITE_APP_NAME% - %VITE_APP_SLOGAN%" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="%VITE_APP_URL%/" />
+    <meta name="twitter:title" content="%VITE_APP_NAME%" />
+    <meta name="twitter:description" content="%VITE_APP_SLOGAN%" />
+    <meta
+      name="twitter:image"
       content="%VITE_APP_URL%/img/screenshot-wide.png"
     />
     <script type="application/ld+json">
