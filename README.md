@@ -8,7 +8,7 @@ The phase is the same everywhere on Earth at a given moment, so the app needs **
 
 Also available as Chrome extensions: [MoonBar](https://chromewebstore.google.com/detail/moonbar-moon-phase-in-you/nggjihigdfdcdapndddbcokfcdcgdaok) & [MoonTab](https://chromewebstore.google.com/detail/moontab-moon-phase-on-eve/hhfkcegnckjfijmciglgpgmmnbmikkmd).
 
-_This project supersedes its previous [Solid.js + Firebase version](https://github.com/kkomelin/ashtangamoon-solid/tree/v2.2.0) and the original [vanilla JS version](https://github.com/kkomelin/ashtangamoon-vanilla)._
+_This project supersedes its previous [Solid.js + Firebase version](https://github.com/kkomelin/ashtangamoon.org/tree/ashtangamoon-solid-prev) and the original [vanilla JS version](https://github.com/kkomelin/ashtangamoon-vanilla)._
 
 ## Stack
 
