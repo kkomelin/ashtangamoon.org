@@ -35,6 +35,38 @@
       property="og:image"
       content="%VITE_APP_URL%/img/screenshot-wide.png"
     />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "%VITE_APP_NAME%",
+        "description": "%VITE_APP_SLOGAN%",
+        "url": "%VITE_APP_URL%",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "isRelatedTo": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "MoonBar",
+            "description": "Moon phase in your browser toolbar.",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Chrome",
+            "url": "https://chromewebstore.google.com/detail/moonbar-moon-phase-in-you/nggjihigdfdcdapndddbcokfcdcgdaok",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "MoonTab",
+            "description": "Moon phase on every new tab.",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Chrome",
+            "url": "https://chromewebstore.google.com/detail/moontab-moon-phase-on-eve/hhfkcegnckjfijmciglgpgmmnbmikkmd",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+          }
+        ]
+      }
+    </script>
     <style>
       :root {
         --bg: #0f1118;

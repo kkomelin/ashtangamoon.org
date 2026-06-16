@@ -53,6 +53,22 @@ const pwaOptions = (
           sizes: '1200x1200',
         },
       ],
+      // Companion Chrome extensions. `chrome_web_store` is a W3C-registered
+      // platform; browsers expose this list via navigator.getInstalledRelatedApps().
+      // prefer_related_applications stays false so the PWA itself remains installable.
+      related_applications: [
+        {
+          platform: 'chrome_web_store',
+          id: 'nggjihigdfdcdapndddbcokfcdcgdaok',
+          url: 'https://chromewebstore.google.com/detail/moonbar-moon-phase-in-you/nggjihigdfdcdapndddbcokfcdcgdaok',
+        },
+        {
+          platform: 'chrome_web_store',
+          id: 'hhfkcegnckjfijmciglgpgmmnbmikkmd',
+          url: 'https://chromewebstore.google.com/detail/moontab-moon-phase-on-eve/hhfkcegnckjfijmciglgpgmmnbmikkmd',
+        },
+      ],
+      prefer_related_applications: false,
     },
     useCredentials: true,
     selfDestroying: false,
