@@ -21,10 +21,10 @@
       sizes="16x16"
       href="/img/favicon-16x16.png"
     />
-    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#193d61" />
+    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#0f1118" />
     <link rel="shortcut icon" href="/img/favicon.ico" />
-    <meta name="msapplication-TileColor" content="#193d61" />
-    <meta name="theme-color" content="#193d61" />
+    <meta name="msapplication-TileColor" content="#0f1118" />
+    <meta name="theme-color" content="#0f1118" />
     <meta name="msapplication-config" content="/img/browserconfig.xml" />
     <meta name="description" content="%VITE_APP_SLOGAN%" />
     <meta property="og:type" content="website" />
@@ -36,71 +36,173 @@
       content="%VITE_APP_URL%/img/screenshot-wide.png"
     />
     <style>
-      /* App Shell */
       :root {
-        --am-color-primary: #ffffff;
-        --am-color-secondary: #9de7fa;
-        --am-color-tertiary: #193d61;
-        --am-color-quarteraly: #4682b4;
+        --bg: #0f1118;
+        --panel: #1b1f2b;
+        --text: #eef0f6;
+        --muted: #8a90a0;
+        --accent: #cdd4ea;
+        --line: #2a2f3e;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
       }
       html,
       body {
-        margin: 0;
-        padding: 0;
-        background-color: var(--am-color-tertiary);
-        color: var(--am-color-primary);
-        font-family:
-          'Roboto', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-          'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+        height: 100%;
       }
-      body,
-      #root {
+      body {
+        color: var(--text);
+        font:
+          15px/1.45 -apple-system,
+          'Segoe UI',
+          Roboto,
+          Arial,
+          sans-serif;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         align-items: center;
-        width: 100%;
-        height: 100vh;
+        justify-content: center;
+        padding: 32px;
+        background:
+          radial-gradient(
+            120% 80% at 50% -10%,
+            #20263a 0%,
+            rgba(32, 38, 58, 0) 60%
+          ),
+          var(--bg);
       }
-      header {
+
+      /* The moon card, centered in the viewport. */
+      .card {
+        width: 340px;
+        max-width: 100%;
+      }
+
+      .moon-wrap {
+        display: flex;
+        justify-content: center;
+      }
+      .moon-wrap svg {
+        display: block;
+        filter: drop-shadow(0 4px 22px rgba(0, 0, 0, 0.55));
+      }
+      .phase {
         text-align: center;
-        margin-top: 2.5rem;
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        margin-top: 22px;
       }
-      header h1 {
-        margin-block-start: 0;
-        margin-block-end: 0;
-        margin-inline-start: 0;
-        margin-inline-end: 0;
-        font-weight: bold;
-        font-size: 1.875rem;
-        line-height: 2.25rem;
-        margin-bottom: 0.5rem;
+      .illum {
+        text-align: center;
+        color: var(--muted);
+        font-size: 14px;
+        margin-top: 5px;
       }
-      header h2 {
-        margin-block-start: 0;
-        margin-block-end: 0;
-        margin-inline-start: 0;
-        margin-inline-end: 0;
-        color: var(--am-color-secondary);
-        letter-spacing: 0.025em;
-        margin-bottom: 1rem;
-        font-size: 1rem;
-        line-height: 1.5rem;
-        font-weight: normal;
+      .next {
+        margin-top: 26px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 14px 16px;
+      }
+      .next-label {
+        color: var(--muted);
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .next-row {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 8px;
+        margin-top: 5px;
+      }
+      .next-name {
+        font-size: 17px;
+        font-weight: 600;
+      }
+      .next-when {
+        color: var(--accent);
+        font-size: 14px;
+        white-space: nowrap;
+      }
+      .next-rel {
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 2px;
+      }
+      .other {
+        margin-top: 11px;
+        padding-top: 11px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .extensions {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 16px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 12px;
+        padding: 0 16px;
+      }
+      .extensions a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .extensions a:hover,
+      .extensions a:focus-visible {
+        text-decoration: underline;
+      }
+      .extensions .sep {
+        margin: 0 3px;
       }
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body>
-    <div id="root">
-      <header class="mt-10">
-        <h1 class="mb-2 text-3xl font-bold">%VITE_APP_NAME%</h1>
-        <h2 class="text-secondary mb-4 text-base tracking-wide">
-          %VITE_APP_SLOGAN%
-        </h2>
-      </header>
-    </div>
-    <script type="module" src="/src/index.tsx"></script>
+    <main class="card">
+      <div class="moon-wrap" id="moonWrap"></div>
+      <div class="phase" id="phase">...</div>
+      <div class="illum" id="illum"></div>
+
+      <div class="next">
+        <div class="next-label">Next event</div>
+        <div class="next-row">
+          <span class="next-name" id="nextName">-</span>
+          <span class="next-when" id="nextWhen"></span>
+        </div>
+        <div class="next-rel" id="nextRel"></div>
+        <div class="other" id="other" hidden>
+          <span id="otherName"></span>
+          <span id="otherWhen"></span>
+        </div>
+      </div>
+    </main>
+
+    <footer class="extensions">
+      Also available as Chrome extensions:
+      <a
+        href="https://chromewebstore.google.com/detail/moonbar-moon-phase-in-you/nggjihigdfdcdapndddbcokfcdcgdaok"
+        target="_blank"
+        rel="noopener"
+        >MoonBar</a
+      >
+      <span class="sep">&amp;</span>
+      <a
+        href="https://chromewebstore.google.com/detail/moontab-moon-phase-on-eve/hhfkcegnckjfijmciglgpgmmnbmikkmd"
+        target="_blank"
+        rel="noopener"
+        >MoonTab</a
+      >
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

@@ -26,14 +26,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Install functions dependencies
-        run: pnpm --prefix './functions' install --frozen-lockfile
-
       - name: Build project
         run: pnpm run build
-
-      - name: Build functions
-        run: pnpm run functions:build
 
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0

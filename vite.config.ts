@@ -2,7 +2,6 @@ import { defineConfig, loadEnv } from 'vite'
 import { ViteMinifyPlugin } from 'vite-plugin-minify'
 import type { VitePWAOptions } from 'vite-plugin-pwa'
 import { VitePWA } from 'vite-plugin-pwa'
-import solid from 'vite-plugin-solid'
 
 const isPwaDisabled = process.env?.PWA_DISABLE === 'true'
 
@@ -12,6 +11,10 @@ const pwaOptions = (
 ): Partial<VitePWAOptions> => {
   return {
     disable: isPwaDisabled,
+    // autoUpdate: existing installed users on the old SW get the new one installed
+    // and applied silently on the next reload. selfDestroying stays off so the SW
+    // keeps serving the precache between updates.
+    registerType: 'autoUpdate',
     base: '/',
     includeAssets: [
       'img/apple-touch-icon.png',
@@ -25,8 +28,8 @@ const pwaOptions = (
       name: appName,
       short_name: appName,
       description: appDescription,
-      background_color: '#193d61',
-      theme_color: '#193d61',
+      background_color: '#0f1118',
+      theme_color: '#0f1118',
       icons: [
         {
           src: '/img/android-chrome-192x192.png',
@@ -67,12 +70,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), 'VITE_')
 
   return {
-    // vite config
-    // define: {
-    //   __APP_NAME__: JSON.stringify(env.APP_NAME),
-    // },
     plugins: [
-      solid(),
       VitePWA(pwaOptions(env.VITE_APP_NAME, env.VITE_APP_SLOGAN)),
       // Config details are here: https://www.npmjs.com/package/html-minifier-terser.
       ViteMinifyPlugin({}),
